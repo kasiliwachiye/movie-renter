@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import Movies from './components/Movies'
 
-export class App extends Component {
+class App extends Component {
   render() {
     return (
       <main className='container'>
-        <h1>Hello World</h1>
+        <div className="starter-template">
+          <h1>Movie Renter</h1>
+        </div>
+        <Movies />
       </main>
     )
   }
