@@ -1,12 +1,13 @@
-import './App.css';
-import Counter from './components/counter';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <Counter />
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <main className='container'>
+        <h1>Hello World</h1>
+      </main>
+    )
+  }
 }
 
-export default App;
+export default App
