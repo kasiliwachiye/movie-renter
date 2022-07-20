@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import _ from "lodash";
+import PropTypes from 'prop-types'
 
 const Pagination = props => {
   const { itemsCount, pageSize, onPageChange, currentPage } = props;
@@ -12,12 +13,12 @@ const Pagination = props => {
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
-        {pages.map(page => (
-          <li 
-            key={page} 
-            className={ page === currentPage ? 'page-item active' : 'page-item'}>
-            <a 
-              onClick={() => props.onPageChange(page)} className="page-link">
+        {pages.map((page) => (
+          <li
+            key={page}
+            className={page === currentPage ? "page-item active" : "page-item"}
+          >
+            <a onClick={() => props.onPageChange(page)} className="page-link">
               {page}
             </a>
           </li>
@@ -25,6 +26,13 @@ const Pagination = props => {
       </ul>
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  itemsCount: PropTypes.number.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired
 };
 
 export default Pagination;
