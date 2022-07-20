@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 const Pagination = props => {
   const { itemsCount, pageSize, onPageChange, currentPage } = props;
-  console.log(currentPage);
 
   const pagesCount = Math.ceil(itemsCount / pageSize);
   if (pagesCount === 1) return null;
@@ -18,7 +17,7 @@ const Pagination = props => {
             key={page}
             className={page === currentPage ? "page-item active" : "page-item"}
           >
-            <a onClick={() => props.onPageChange(page)} className="page-link">
+            <a onClick={() => onPageChange(page)} className="page-link">
               {page}
             </a>
           </li>
