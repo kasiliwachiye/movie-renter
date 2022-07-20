@@ -11,12 +11,12 @@ class Movies extends Component {
     currentPage: 1,
   };
 
-  handleDelete = movie => {
+  handleDelete = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
   };
 
-  handlePageChange = page => {
+  handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
