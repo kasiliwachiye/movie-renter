@@ -31,7 +31,6 @@ class Movies extends Component {
       currentPage,
       movies: allMovies,
       selectedGenre,
-      sortColumn,
     } = this.state;
 
     const filtered =
