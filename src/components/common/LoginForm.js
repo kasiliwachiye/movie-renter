@@ -1,35 +1,42 @@
 import React, { Component } from "react";
+import Input from "./Input";
 
 export default class LoginForm extends Component {
+  state = {
+    account: { username: "", password: "" },
+  };
+
+  handleChange = ({ currentTarget: input }) => {
+    const account = { ...this.state.account };
+    account[input.name] = input.value;
+    this.setState({ account });
+  };
+
   handleSubmit = (e) => {
-    e.preventdefault()
-    console.log('Submitted')
-  }
+    e.preventdefault();
+    // Call the server
+    console.log("Submitted");
+  };
 
   render() {
+    const { account } = this.state;
+
     return (
-      <div className="">
-        <h1>Login</h1>
-        <form className="w-50 p-3" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="email"
-              className="form-control"
-              id="username"
-              aria-describedby="emailHelp"
-              placeholder="Username"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Password"
-            />
-          </div>
+      <div className="d-flex justify-content-center">
+        <form className="w-50 p-5 border" onSubmit={this.handleSubmit}>
+          <h1>Login</h1>
+          <Input
+            label="Username"
+            name="username"
+            value={account.username}
+            onChange={this.handleChange}
+          />
+          <Input
+            label="Password"
+            name="password"
+            value={account.password}
+            onChange={this.handleChange}
+          />
           <button type="submit" className="btn btn-primary">
             Login
           </button>
