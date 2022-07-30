@@ -35,7 +35,7 @@ class Movies extends Component {
       currentPage,
       movies: allMovies,
       selectedGenre,
-      searchQuery
+      searchQuery,
     } = this.state;
 
     let filtered = allMovies;

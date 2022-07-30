@@ -1,24 +1,24 @@
-import Joi from 'joi-browser'
-import Form from './common/Form'
+import Joi from "joi-browser";
+import Form from "./common/Form";
 
 class RegisterForm extends Form {
-  state = { 
+  state = {
     data: { username: "", password: "" },
-    errors: {}
-  }
-   
+    errors: {},
+  };
+
   schema = {
     username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().min(5).label("Password"),
-    name: Joi.string().required().label("Name")
+    name: Joi.string().required().label("Name"),
   };
 
   doSubmit = () => {
     // Call the server
     console.log("Submitted");
-  }
-  
-  render() { 
+  };
+
+  render() {
     return (
       <div className="d-flex justify-content-center">
         <form className="w-50 p-5 border" onSubmit={this.handleSubmit}>
@@ -32,5 +32,5 @@ class RegisterForm extends Form {
     );
   }
 }
- 
+
 export default RegisterForm;

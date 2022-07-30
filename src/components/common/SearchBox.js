@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const SearchBox = ({value, onChange}) => {
+const SearchBox = ({ value, onChange }) => {
   return (
-    <input 
-    type="text" 
-    value={value} 
-    onChange={(event) => onChange(event.target.value)}
-    className="form-control my-2" 
-    placeholder="Search..." />
-  )
-}
+    <input
+      type="text"
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+      className="form-control my-3"
+      placeholder="Search..."
+    />
+  );
+};
 
-export default SearchBox
+export default SearchBox;
